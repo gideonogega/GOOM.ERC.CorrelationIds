@@ -1,0 +1,31 @@
+version: '2.1'
+
+networks:
+  correlationids_network:
+    external:
+      name: correlationids_network
+
+
+services:    
+
+  #kafka setup  
+  myzookeeper:
+    image: "confluentinc/cp-zookeeper"
+    environment:
+      - ZOOKEEPER_CLIENT_PORT=2181
+    networks:
+     - correlationids_network
+    ports:
+      - "2181:2181"
+ 
+  mykafka:
+    image: "confluentinc/cp-kafka"
+    environment:
+      - KAFKA_ZOOKEEPER_CONNECT=myzookeeper:2181
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_ZOOKEEPER_CONNECT_TIMEOUT_MS=60000
+    networks:
+     - correlationids_network
+    ports:
+      - "9092:9092"

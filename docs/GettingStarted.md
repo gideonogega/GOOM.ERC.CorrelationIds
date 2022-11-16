@@ -6,7 +6,7 @@ First things first, install Docker for your operating system. Instructions for [
 
 ### Docker Compose:
 
-Next, open a command line shell, switch to the main project directory and run `docker-compose up`. This will start up all the backing services required for the code to run. These are defined in the [docker-compose.yml](../src/docker-compose.yml) file.
+Next, open a command line shell, switch to the main project directory and run `docker-compose up`. This will start up all the backing services required for the code to run. These are defined in the [docker-compose.yml](../scripts/docker-compose.yml) file.
 
 Additional details regarding docker-compose can be found [here](https://docs.docker.com/compose/).
 

@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GOOM.ERC.CorrelationIds.Lib", "GOOM.ERC.CorrelationIds.Lib\GOOM.ERC.CorrelationIds.Lib.csproj", "{F4DC9A69-59E0-4CB7-AB44-31D1CCB63C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GOOM.ERC.CorrelationIds.CoreApi", "GOOM.ERC.CorrelationIds.CoreApi\GOOM.ERC.CorrelationIds.CoreApi.csproj", "{0B598EC8-4136-4B05-899C-5B9064E62D5E}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4DC9A69-59E0-4CB7-AB44-31D1CCB63C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4DC9A69-59E0-4CB7-AB44-31D1CCB63C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4DC9A69-59E0-4CB7-AB44-31D1CCB63C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4DC9A69-59E0-4CB7-AB44-31D1CCB63C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B598EC8-4136-4B05-899C-5B9064E62D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B598EC8-4136-4B05-899C-5B9064E62D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B598EC8-4136-4B05-899C-5B9064E62D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B598EC8-4136-4B05-899C-5B9064E62D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

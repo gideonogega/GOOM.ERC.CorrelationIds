@@ -4,11 +4,7 @@
 
 First things first, install Docker for your operating system. Instructions for [Windows](https://docs.docker.com/docker-for-windows/install/), [Mac](https://docs.docker.com/docker-for-mac/install/) and [Linux](https://docs.docker.com/docker-for-mac/install/) are readily available available.
 
-### Docker Compose:
-
-Next, open a command line shell, switch to the main project directory and run `docker-compose up`. This will start up all the backing services required for the code to run. These are defined in the [docker-compose.yml](../scripts/docker-compose.yml) file.
-
-Additional details regarding docker-compose can be found [here](https://docs.docker.com/compose/).
+### Run the ELK stack as specificed https://logz.io/blog/elk-stack-on-docker/
 
 ### Run Application:
 

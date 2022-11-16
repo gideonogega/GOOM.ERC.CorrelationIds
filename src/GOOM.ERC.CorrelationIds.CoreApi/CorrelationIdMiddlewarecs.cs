@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Primitives;
+﻿using Microsoft.Extensions.Primitives;
+using Serilog.Context;
 
 namespace GOOM.ERC.CorrelationIds.CoreApi
 {
@@ -28,17 +28,21 @@ namespace GOOM.ERC.CorrelationIds.CoreApi
                 parentRequestId = new StringValues();
             }
 
-            if (IncludeInResponse)
+            using (LogContext.PushProperty("CorrelationId", correlationId))
+            using (LogContext.PushProperty("ParentRequestId", parentRequestId))
             {
-                // apply the correlation ID to the response header for client side tracking
-                context.Response.OnStarting(() =>
+                if (IncludeInResponse)
                 {
-                    context.Response.Headers.Add(CorrelationHeader, new[] { context.TraceIdentifier });
-                    return Task.CompletedTask;
-                });
-            }
+                    // apply the correlation ID to the response header for client side tracking
+                    context.Response.OnStarting(() =>
+                    {
+                        context.Response.Headers.Add(CorrelationHeader, new[] { context.TraceIdentifier });
+                        return Task.CompletedTask;
+                    });
+                }
 
-            return _next(context);
+                return _next(context);
+            }
         }
     }
 }

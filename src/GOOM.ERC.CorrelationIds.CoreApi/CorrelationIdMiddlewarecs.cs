@@ -18,9 +18,14 @@ namespace GOOM.ERC.CorrelationIds.CoreApi
 
         public Task Invoke(HttpContext context)
         {
-            if (context.Request.Headers.TryGetValue(CorrelationHeader, out StringValues correlationId))
+            if (!context.Request.Headers.TryGetValue(CorrelationHeader, out StringValues correlationId))
             {
-                context.TraceIdentifier = correlationId;
+                correlationId = new StringValues(Guid.NewGuid().ToString());
+            }
+
+            if (!context.Request.Headers.TryGetValue(ParentHeader, out StringValues parentRequestId))
+            {
+                parentRequestId = new StringValues();
             }
 
             if (IncludeInResponse)
